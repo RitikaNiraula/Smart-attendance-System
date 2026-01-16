@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% csrf_token %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACE RECOGNITION ATTENDANCE SYSTEM</title>
+    <link rel="stylesheet" href="{%static 'index1.css'%}">
+</head>
+<body>
+    <div class="navbar">
+        <h2>FACE RECOGNITION ATTENDANCE SYSTEM</h2>
+        <div class="nav-links">
+            <a href="{% url 'Login' %}">Log out</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="menu">
+            <a href="{% url 'Studentview'%}">
+            <button class="menu-btn">
+                <img src="{%static 'image/images.png'%}" alt="Register" >
+                <span>Register Students</span>
+            </button></a>
+            <a href="{% url 'Face_Detector' %}">
+            <button class="menu-btn">
+                <img src="{%static 'image/faceds.jpg'%}" alt="Face Detection" href="{%url 'Face_Detector' %}">
+                <span>Face Detection</span>
+            </button></a>
+            <a href="{% url 'generate_excel_sheet' %}">
+            <button class="menu-btn">
+                <img src="{% static 'image/view.png'%}" alt="View Attendance">
+                <span>View Attendance</span>
+            </button></a>
+            </button>
+        </div>
+
+        <div class="text-container">
+            <h2>Welcome.. To The Face Recognition</h2>
+            <h1>Attendance System</h1>
+            <p class="description">
+                The Face Recognition Attendance System uses deep learning techniques,specifically convolutional neural networks (CNNs), 
+                to accurately identify and track individuals for automated attendance. It ensures efficient, secure, and error-free 
+                attendance recording by matching facial features in real-time.
+            </p>
+            
+        </div>
+        <footer class="footer">
+            <p>&copy; 2025 Face Recognition Attendance System. All rights reserved.</p>
+        </footer>
+        <script src="{%static 'index1.js'%}"></script>
+</body>
+</html>

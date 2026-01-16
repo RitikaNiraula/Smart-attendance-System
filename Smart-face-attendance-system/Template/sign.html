@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+
+    <title>Sign In - Face Recognition System</title>
+    <link rel="stylesheet" href="{% static 'sign.css' %}">
+</head>
+<body>
+    {% include 'alert.html' %}
+    <div class="container">
+        <header>
+            <h1 class="title">Sign In To Face Recognition System</h1>
+        </header>
+
+        <div class="sign-in-form">
+            <form method="POST" >
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your Fullname: " required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="abc@123" required>
+                
+                <label for="contact">Contact No:</label>
+                <input type="contact" id="contact" name="contact" placeholder="+977... ">
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="----------" required>
+                
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

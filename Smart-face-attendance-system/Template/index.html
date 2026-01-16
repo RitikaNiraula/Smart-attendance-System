@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Hub</title>
+    <link rel="stylesheet" href="{%static 'index.css'%}">
+</head>
+<body>
+{% include 'alert.html' %}
+    
+
+    <div class="bg-container">
+        <h1 class="title">STUDENT INFORMATION HUB</h1>
+        
+
+
+        <div class="main-frame">
+            <!-- Left frame (Student Data Entry) -->
+             <!-- Left Frame -->
+            <div class="left-frame">
+            <!-- <img src="{%static 'image/studendetailsimg.webp'%}" class="frame-img"> -->
+            <form method="POST" action="{%url 'Studentview'%}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="current-course">
+                <label for="department">Department</label>
+                  <select id="department" name="department">
+                  <option value="Select Department">Select Department</option>
+                  <option value="Computer">Computer</option>
+                  
+                  </select>
+
+                
+
+                <label for="year">Year</label>
+                  <select id="year" name="year">
+                  <option value="2024-2025">2024-2025</option>
+                  <option value="2025-2026">2025-2026</option>
+                 </select>
+
+                <label for="semester">Semester</label>
+                  <select id="semester" name="semester">
+                   <option value="semester-1">semester-1</option>
+                  <option value="semester-2">semester-2</option>
+                  <option value="semester-3">semester-3</option>
+                  <option value="semester-4">semester-4</option>
+                  <option value="semester-5">semester-5</option>
+                  <option value="Semester-6">Semester-6</option>
+                  </select>
+               </div>
+
+               <div class="class-student-info">
+                <label for="studentId">Student ID</label>
+                 <input type="text" id="studentId" name="studentId">
+
+                <label for="studentName">Student Name</label>
+                   <input type="text" id="studentName" name="studentName">
+
+                <label for="classGroup">Class Group</label>
+                 <select id="classGroup" name="classGroup">
+                 <option value="AB">AB</option>
+                 <option value="CD">CD</option>
+                </select>
+
+            
+
+                <label for="teacherName">Teacher Name</label>
+                 <input type="text" id="teacherName" name="teacherName">
+                 
+                 <label for="photo">Upload Photo</label>
+                <input type="file" id="photo" name="photo">
+               
+            </div>
+            
+
+    <!-- Button Frame - Move buttons here -->
+    <div class="button-frame">
+        <button id="saveBtn" type="submit" name="saveBtn">Save</button>
+        <button id="updateBtn" type="submit" name="updateBtn">Update</button>
+       <button id="deleteBtn" type="submit" name="deleteBtn">Delete</button>
+       <button id="resetBtn" >Reset</button>
+    </div></form>
+    <div id="message"></div>
+
+    <!-- <div class="photo-sample-buttons">
+        <button onclick="takePhotoSample()">Take Photo Sample</button>
+        <button onclick="updatePhotoSample()">Update Photo Sample</button>
+    </div> -->
+</div>
+
+            
+            <!-- Right frame (Search and Table) -->
+            <div class="right-frame">
+                <img src="{% static 'image/smart-attendance.jpg'%}" class="frame-img">
+
+                <!-- Search system -->
+                <div class="search-system">
+                    <label for="searchBy">Search By</label>
+                    <select id="searchBy">
+                        <option value="Select">Select</option>
+                        <option value="Student Name">Student Name</option>
+                        <option value="Student ID">Student Id</option>
+                    </select>
+                    <input type="text" id="searchQuery">
+                </div>
+                    <div class="button-container">
+                        <button id="searchBtn">Search</button>
+                        <button id="showAllBtn">Show All</button>
+                    </div>
+                
+
+                <div class="table-frame">
+                    <div class="table-container">
+                        <table id="studentTable">
+                            <thead>
+                                <tr>
+                                    <th>Department</th>
+                                    
+                                    <th>Year</th>
+                                    <th>Semester</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Class Group</th>
+                                    <th>Teacher</th>
+                                    <th>Photo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for student in students %}
+                                     <tr>
+                                        <td>{{ student.department }}</td>
+                                
+                                        <td>{{ student.year }}</td>
+                                        <td>{{ student.semester }}</td>
+                                        <td>{{ student.student_id }}</td>
+                                        <td>{{ student.student_name }}</td>
+                                        <td>{{ student.class_group }}</td>
+                                        <td>{{ student.teacher_name }}</td>
+                                        <td>
+                                            {% if student.photo %}
+                                                <img src="{{ student.photo.url }}" alt="Student Photo" width="50">
+                                            {% else %}
+                                                No Photo
+                                            {% endif %}
+                                        </td>                             
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="scrollbar-x">
+                        <div class="scrollbar-inner-x"></div>
+                    </div>
+                    <div class="scrollbar-y">
+                        <div class="scrollbar-inner-y"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    <script src="{%static 'script.js'%}"></script>
+</body>
+</html>

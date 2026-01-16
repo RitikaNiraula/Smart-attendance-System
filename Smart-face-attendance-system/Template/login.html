@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Face Recognition System</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    {% include 'alert.html' %}
+    <div class="login-container">
+       
+        <header>
+            <h1>Face Recognition Attendance System</h1>
+        </header>
+
+      
+        <div class="login-form">
+            <h2>Login</h2>
+            
+            <form method="POST">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password " required>
+                
+                <button type="submit" class="btn">Login</button>
+
+                <p class="footer-text">
+                    Don't have an account? <a href="{% url 'SignUp'%}">Sign Up</a>
+                </p>
+                <p class="footer-text">
+                    Forgot Password??<a href="{% url 'Forgot'%}">Forgot?</a>
+                </p>
+            </form>
+           
+        
+        </div>
+    </div>
+</body>
+</html>

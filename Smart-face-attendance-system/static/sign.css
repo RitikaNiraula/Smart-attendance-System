@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url('image/i.webp') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #811717;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Header */
+header {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    color: #1f766d;
+}
+
+/* Sign-In Form */
+.sign-in-form {
+    text-align: left;
+}
+
+.sign-in-form label {
+    display: block;
+    font-size: 1rem;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.sign-in-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Button */
+.sign-in-form .btn {
+    width: 100%;
+    background: #1f766d;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.sign-in-form .btn:hover {
+    background: #0056b3;
+}
+
+/* Footer Text */
+.footer-text {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.footer-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Adjust form size & font sizes for tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 350px;
+    }
+
+    body {
+        padding: 10px;
+        background-size: cover;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .sign-in-form label {
+        font-size: 0.9rem;
+    }
+
+    .sign-in-form input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .sign-in-form .btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+        max-width: 320px;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .sign-in-form label {
+        font-size: 0.8rem;
+    }
+
+    .sign-in-form input {
+        font-size: 0.8rem;
+        padding: 7px;
+    }
+
+    .sign-in-form .btn {
+        font-size: 0.8rem;
+        padding: 7px;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+}

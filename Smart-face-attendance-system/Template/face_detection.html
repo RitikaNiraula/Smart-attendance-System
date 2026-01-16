@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detector</title>
+</head>
+<body>
+    <h1>Webcam Feed</h1>
+
+    <!-- Display streaming video -->
+    <img src="{% url 'start_stream' %}" width="640" height="480" alt="Face Recognition Stream">
+
+    <script>
+        // Listen for 'q' key press to stop the stream and redirect to home page
+        
+        document.addEventListener("keydown", function(event) {
+            console.log("keydown event detected");
+            if (event.key === 'q') {
+                console.log("Key Q pressed");
+                window.location.href = "/home/";  // Redirect to home page
+            }
+        });
+    </script>
+</body>
+</html>

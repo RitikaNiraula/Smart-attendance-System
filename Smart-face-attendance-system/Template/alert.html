@@ -1,0 +1,47 @@
+{% if messages %}
+    <div id="alert-box" class="alert">
+        {% for message in messages %}
+            <span>{{ message }}</span>
+        {% endfor %}
+        <button class="close-btn" onclick="closeAlert()">×</button>
+    </div>
+{% endif %}
+
+<style>
+    .alert {
+        position: relative;
+        background-color: #f8d7da; /* Light red */
+        color: #721c24; /* Dark red */
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #721c24;
+    }
+
+    .close-btn:hover {
+        color: black;
+    }
+</style>
+
+<script>
+    function closeAlert() {
+        var alertBox = document.getElementById("alert-box");
+        if (alertBox) {
+            alertBox.style.display = "none";
+        }
+    }
+</script>

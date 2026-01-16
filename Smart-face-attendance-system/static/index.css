@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background-color:rgba(33, 31, 31, 0.844);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+}
+
+.title {
+    text-align: center;
+    font-size: 35px;
+    color: green;
+    margin-top: 20px;
+}
+
+.main-frame {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1;
+    /* Occupy remaining height */
+    background-color:white;
+    /* White background for the main frame */
+    height: 900px; /* Set a fixed height */
+    padding: 20px;
+    border-radius: 8px;
+    /* Optional: rounded corners for the container */
+}
+
+.left-frame {
+    width: 35%;
+    /* 48% to leave small space in between */
+    padding: 20px;
+    background-color:  rgba(87, 85, 85, 0.844);
+    /* White background for both frames */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: add shadow for depth */
+    border-radius: 8px;
+    /* Optional: rounded corners for frames */
+    overflow: hidden;
+    /* Hide any overflow within frames */
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.message.success {
+    background-color: green;
+}
+
+.message.error {
+    background-color: rgb(144, 26, 26);
+}
+.right-frame {
+    width: 62%;
+    /* 48% to leave small space in between */
+    padding: 20px;
+    background-color:   rgba(87, 85, 85, 0.844);
+    /* White background for both frames */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: add shadow for depth */
+    border-radius: 8px;
+    /* Optional: rounded corners for frames */
+    overflow: hidden;
+    /* Hide any overflow within frames */
+}
+
+.frame-img {
+    width:100%;
+    height: 130px;
+}
+
+/* Style for the container around the radio buttons */
+.radio-buttons {
+    display: flex;
+    flex-direction: horizontal;
+    /* Align radio buttons vertically */
+    margin: 10px 0;
+}
+
+/* Custom radio button appearance */
+.radio-buttons input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+    /* Space between radio button and label */
+    accent-color: blue;
+    /* For modern browsers, changes the color of the radio button */
+}
+
+/* Label for radio buttons */
+.radio-buttons label {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.radio-buttons input[type="radio"]:hover {
+    transform: scale(1.2);
+}
+
+/* Style when the radio button is checked */
+.radio-buttons input[type="radio"]:checked {
+    background-color: blue;
+    border: 2px solid blue;
+}
+
+/* Optional: Change color of label when radio button is checked */
+.radio-buttons input[type="radio"]:checked+label {
+    color: blue;
+}
+.selected-row {
+    background-color:  rgba(98, 94, 94, 0.844);
+}
+
+button {
+    font-size: 15px;
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+select,
+input {
+    width: 100%;
+    padding:3px;
+    margin: 5px 0;
+    font-size: 12px; /* Adjust the font size to make the box shorter */
+    line-height: 1.2;
+}
+
+
+
+button {
+    padding: 12px 20px;
+    margin: 5px;
+}
+
+.search-system {
+    margin-bottom: 20px;
+    width:50%
+}
+
+.search-system input {
+    width: calc(100% - 120px);
+    /* Adjust width to fit search box */
+}
+/* Container for the buttons */
+.button-container {
+    display: flex;          /* Enables flexbox layout */
+    justify-content: flex-start;  /* Align buttons to the left */
+    gap: 10px;              /* Adds space between the buttons */
+    margin-bottom: 20px;    /* Optional: Space below the buttons */
+}
+/* Container for the buttons */
+.button-container {
+    display: flex;          /* Enables flexbox layout */
+    justify-content: flex-start;  /* Align buttons to the left */
+    gap: 10px;              /* Adds space between the buttons */
+    margin-bottom: 20px;    /* Optional: Space below the buttons */
+}
+.button-frame{
+    padding:10px 
+}
+
+/* Style for buttons */
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0;  /* Remove default margin */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+
+/* Ensures full height without overflow */
+html,
+body {
+    height: 100%;
+}
+
+.table-frame {
+    position: relative;
+    width: 825px;
+    height: 500px;
+    border: 5px solid  rgba(23, 21, 21, 0.844);
+    background-color: white;
+    overflow: hidden;
+}
+
+.table-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Scrollbars Styling */
+.scrollbar-x, .scrollbar-y {
+    position: absolute;
+    background-color: #f1f1f1;
+}
+
+.scrollbar-x {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+
+.scrollbar-y {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 10px;
+}
+
+.scrollbar-inner-x, .scrollbar-inner-y {
+    background-color: #888;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.scrollbar-inner-x:hover, .scrollbar-inner-y:hover {
+    background-color: #555;
+}
+.bg-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Vertical scroll */
+}
+.alert {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #721c24;
+}
+.close-btn:hover {
+    color: red;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller devices */
+@media (max-width: 1024px) {
+    .left-frame, .right-frame {
+        width: 100%; 
+        margin-top: 20px; 
+    }
+
+    .main-frame {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .search-system {
+        width: 100%; 
+    }
+
+    .button-container {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .table-frame {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .frame-img {
+        height: auto; 
+    }
+
+    .message {
+        font-size: 16px; 
+        padding: 8px 16px; 
+    }
+
+    .title {
+        font-size: 28px; 
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    .title {
+        font-size: 24px; 
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px; 
+    }
+
+    select,
+    input {
+        font-size: 14px; 
+    }
+
+    .radio-buttons {
+        flex-direction: column; 
+    }
+
+    .radio-buttons input[type="radio"] {
+        width: 18px;
+        height: 18px; 
+    }
+
+    .bg-container {
+        padding: 10px; 
+    }
+}
+
+  
+  
